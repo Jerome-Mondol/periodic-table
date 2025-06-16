@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+body {
+    user-select: none;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./assets/fonts/font.otf'),
+}
+
+
+.custom-font {
+    font-family: 'CustomFont', sans-serif;
+}
+
+.background {
+  position: relative;
+  background-color: #060e1f;
+  background-image:
+    linear-gradient(to right, rgba(68, 68, 68, 0.15) 2px, transparent 2px),
+    linear-gradient(to right, transparent 20px, rgba(85, 85, 85, 0.1) 2px, transparent 2px),
+    linear-gradient(to right, transparent 50px, rgba(68, 68, 68, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(68, 68, 68, 0.15) 2px, transparent 2px),
+    linear-gradient(to bottom, transparent 30px, rgba(85, 85, 85, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, transparent 80px, rgba(68, 68, 68, 0.05) 2px, transparent 2px);
+  background-size: 80px 80px;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(6, 14, 31, 0) 50%,     /* center transparent, lines visible */
+      rgba(6, 14, 31, 1) 75%      /* edges fully opaque, lines hidden */
+    );
+  z-index: 1;
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 10px #ff00f7, 
+    0 0 20px #ff00f7, 
+    0 0 30px #ff00f7;
+}
