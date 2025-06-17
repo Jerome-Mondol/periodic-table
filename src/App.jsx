@@ -1,12 +1,18 @@
-import React from 'react'
-import Landing from './pages/Landing'
 import Home from './pages/Home'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import Table from './pages/Table'
+
+
 
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/table" element={<Table/>} />
+        {/* <Route path="/element/:id" element={<ElementDetail />} /> */}
+      </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,21 +1,36 @@
 @import "tailwindcss";
 
+
+
+/* Global settings */
 body {
-    user-select: none;
-    overflow-x: hidden;
+  user-select: none;
+  overflow-x: hidden;
 }
 
+/* Custom font */
 @font-face {
-    font-family: 'CustomFont';
-    src: url('./assets/fonts/font.otf'),
+  font-family: 'CustomFont';
+  src: url('./assets/fonts/font.otf');
 }
-
 
 .custom-font {
-    font-family: 'CustomFont', sans-serif;
+  font-family: 'CustomFont', sans-serif;
 }
 
-.background {
+/* Removed background color from here so it's flexible */
+.min-h-screen {
+  /* Now it only handles height, not background */
+}
+
+/* Mobile clean background */
+.mobile-bg {
+  background-color: #0F172A; /* clean solid dark background */
+}
+
+/* Desktop glass morphism effect */
+@media (min-width: 1024px) {
+  .background {
   position: relative;
   background-color: #060e1f;
   background-image:
@@ -41,10 +56,4 @@ body {
     );
   z-index: 1;
 }
-
-.neon-text {
-  text-shadow: 
-    0 0 10px #ff00f7, 
-    0 0 20px #ff00f7, 
-    0 0 30px #ff00f7;
 }
